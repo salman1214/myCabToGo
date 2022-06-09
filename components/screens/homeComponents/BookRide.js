@@ -95,9 +95,7 @@ const BookRide = ({ navigation, route }) => {
             </View>
 
             <TouchableOpacity
-                style={styles.btn}
-            
-            >
+                style={styles.btn}>
                 <Text style={styles.btnText}>Done</Text>
             </TouchableOpacity>
         </View>

@@ -96,10 +96,7 @@ const BookRide = ({ navigation, route }) => {
 
             <TouchableOpacity
                 style={styles.btn}
-            //     onPress={() => {
-            //         console.log('btn clicked!!')
-            //         this.bs.current.snapPoints(0)
-            // }}
+            
             >
                 <Text style={styles.btnText}>Done</Text>
             </TouchableOpacity>

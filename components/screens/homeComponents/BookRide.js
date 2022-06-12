@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import {
     View,
-    Text,
     Image,
     StyleSheet,
     TextInput,
     TouchableOpacity
 } from 'react-native'
-// import { TouchableOpacity } from 'react-native-gesture-handler'
 
+import ModalView from './ModalView'
 const BookRide = ({ navigation, route }) => {
     const { focuss } = route.params
     const [focus, setFocus] = useState(focuss)
+    const [modalVisible, setModalVisible] = useState(false);
 
     return (
         <View style={{ height: '100%', justifyContent: 'space-between' }}>
@@ -93,11 +93,7 @@ const BookRide = ({ navigation, route }) => {
                     </View>
                 </View>
             </View>
-
-            <TouchableOpacity
-                style={styles.btn}>
-                <Text style={styles.btnText}>Done</Text>
-            </TouchableOpacity>
+            <ModalView setModalVisible={setModalVisible} modalVisible={modalVisible} />
         </View>
     )
 }

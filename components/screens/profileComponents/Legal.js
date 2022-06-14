@@ -5,7 +5,7 @@ import {
     Image,
     StyleSheet
 } from 'react-native'
-import PagesHeader from './PagesHeader'
+import PagesHeader from '../PagesHeader'
 
 
 const Legal = (props) => {

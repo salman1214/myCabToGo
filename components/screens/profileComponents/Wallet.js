@@ -50,10 +50,6 @@ const Wallet = ({ navigation }) => {
 
             <View style={{borderBottomWidth: 1, paddingBottom: 20, borderColor: '#A7A7A7'}}>
                 <Text style={{color: 'black', marginVertical: 25, color: '#6A6A6A'}}>Promotions</Text>
-                {/* <View style={{paddingVertical: 20, flexDirection: 'row', alignItems: 'center'}}>
-                    <Image style={{width: 30, height: 30}} source={require('../../../Media/money.png')}/>
-                    <Text style={{color: 'black', marginLeft: 15, marginBottom: 7}}>Cash</Text>
-                </View> */}
                 <TouchableOpacity>
                     <Text style={{color: '#5759FF'}}>Add Promo Code</Text>
                 </TouchableOpacity>
@@ -68,7 +64,7 @@ const styles = StyleSheet.create({
         padding: 20
     },
     card: {
-        width: 315,
+        width: 320,
         borderRadius: 20,
         backgroundColor: '#E3E0DD',
         shadowColor: 'black',

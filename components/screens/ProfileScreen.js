@@ -65,6 +65,14 @@ const ProfileScreen = ({ navigation }) => {
 
                 <TouchableOpacity
                     style={styles.list}
+                    onPress={() => navigation.navigate('DriverSignup')}
+                >
+                    <Image source={require('../../Media/wheel.png')} style={{ width: 16, height: 16 }} />
+                    <Text style={styles.listText}>Earn By Driving</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.list}
                     onPress={() => navigation.navigate('Settings')}
                 >
                     <Image source={require('../../Media/gear.png')} style={{ width: 16, height: 16 }} />
@@ -166,7 +174,7 @@ const styles = StyleSheet.create({
         fontWeight: '300'
     },
     list: {
-        paddingTop: 20,
+        paddingTop: 30,
         paddingLeft: 5,
         flexDirection: 'row',
         alignItems: 'center'

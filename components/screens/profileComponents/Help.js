@@ -5,7 +5,7 @@ import {
     Text,
     StyleSheet
 } from 'react-native'
-import PagesHeader from './PagesHeader'
+import PagesHeader from '../PagesHeader'
 
 const Help = (props) => {
     return (

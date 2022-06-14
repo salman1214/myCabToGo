@@ -13,7 +13,7 @@ const PagesHeader = ({ navigation, title }) => {
             <TouchableOpacity
                 onPress={() => navigation.goBack()}
             >
-                <Image style={{ width: 15, height: 15 }} source={require('../../../Media/close-white.png')} />
+                <Image style={{ width: 15, height: 15 }} source={require('../../Media/close-white.png')} />
             </TouchableOpacity>
             <Text style={styles.mainText}>{title}</Text>
         </View>

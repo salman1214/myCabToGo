@@ -7,7 +7,7 @@ import {
     BackHandler
 } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import PagesHeader from './PagesHeader'
+import PagesHeader from '../PagesHeader'
 
 
 const Settings = (props) => {

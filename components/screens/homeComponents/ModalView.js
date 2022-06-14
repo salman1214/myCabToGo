@@ -35,9 +35,9 @@ const ModalView = (props) => {
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.offer}>
-              <Image source={require('../../../Media/motorbike.png')} style={{width: 50, height: 50}} />
-              <View style={{width: 118}}>
-                <Text style={{color: 'black', fontWeight: '500', fontSize: 18, alignSelf: 'flex-start'}}>Cab Moto</Text>
+              <Image source={require('../../../Media/car.png')} style={{width: 70, height: 70}} />
+              <View style={{width: 140}}>
+                <Text style={{color: 'black', fontWeight: '500', fontSize: 18, alignSelf: 'flex-start'}}>Cab Plus</Text>
               </View>
               <Text style={{color: 'black'}}>PKR 150.00</Text>
             </TouchableOpacity>

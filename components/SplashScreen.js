@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     View,
     Text,
     StyleSheet
 } from 'react-native'
 
+
 const SplashScreen = ({ navigation }) => {
 
     setTimeout(() => {
         navigation.replace('OnBoardingScreen')
+        // if(!driverMode){
+        //     navigation.replace('OnBoardingScreen')
+        // }
+        // else {
+        //     navigation.replace('DriverHome', {driverMode})
+        // }
     }, 700)
 
     return (

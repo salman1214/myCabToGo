@@ -7,13 +7,14 @@ import City from '../City';
 import Settings from '../Settings';
 import Faq from '../Faq';
 import Support from '../Support';
+import TabNavigation from './TabNavigation';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
     return (
         <Drawer.Navigator
-            initialRouteName='DriverHome'
+            initialRouteName='Home'
             screenOptions={{
                 drawerActiveBackgroundColor: 'black',
                 drawerActiveTintColor: 'white'
@@ -23,7 +24,7 @@ const DrawerNavigation = () => {
             <Drawer.Screen
                 options={{headerShown: false}}
                 name='Home'
-                component={DriverHome}
+                component={TabNavigation}
             />
             <Drawer.Screen name='My Account' component={Account} />
             <Drawer.Screen name='City' component={City} />

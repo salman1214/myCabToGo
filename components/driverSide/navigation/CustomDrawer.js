@@ -16,9 +16,9 @@ const CustomDrawer = (props) => {
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView>
                 <View style={{ paddingHorizontal: 12, paddingVertical: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <Image source={require('../../../Media/salman.jpg')} style={{ width: 70, height: 70, borderRadius: 50 }} />
+                    <Image source={require('../../../Media/profile-user.png')} style={{ width: 70, height: 70, borderRadius: 50 }} />
                     <View style={{ marginLeft: -55 }}>
-                        <Text style={{ color: 'black' }}>Abdul Moiz</Text>
+                        <Text style={{ color: 'black' }}>Ali Raza</Text>
                         <View style={{ flexDirection: 'row', marginTop: 5 }}>
                             <Image source={require('../../../Media/star-rating.png')} style={{ width: 15, height: 15 }} />
                             <Image source={require('../../../Media/star-rating.png')} style={{ width: 15, height: 15 }} />

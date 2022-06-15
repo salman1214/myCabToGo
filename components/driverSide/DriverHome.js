@@ -1,79 +1,54 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    Image,
-    TextInput
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  TextInput
 } from 'react-native'
+import Offline from './homeComponents/Offline'
+import Online from './homeComponents/Online'
+import NavBar from './NavBar'
 
 const DriverHome = ({ navigation }) => {
 
+  const [status, setStatus] = useState('online')
+
   return (
-    <View style={{height: '100%'}}>
-        <View style={{padding: 10, flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TouchableOpacity
-            style={{width: 45, backgroundColor: 'white', padding: 8, borderRadius: 40}}
-            onPress={() => navigation.openDrawer()}
-          >
-            <Image source={require('../../Media/burger-bar.png')} style={{alignSelf: 'center', width: 30, height: 30}} />
-          </TouchableOpacity>
+    <View style={{ height: '100%' }}>
+      {/* <NavBar status={status} setStatus={setStatus} /> */}
+      <View style={{ padding: 15, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'white' }}>
+            <TouchableOpacity
+                onPress={() => navigation.openDrawer()}
+            >
+                <Image source={require('../../Media/burger-bar.png')} style={{ alignSelf: 'center', width: 30, height: 30 }} />
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            style={{width: 45, backgroundColor: 'white', padding: 8, borderRadius: 40}}
-            // onPress={() => navigation.openDrawer()}
-          >
-            <Image source={require('../../Media/share.png')} style={{alignSelf: 'center', width: 30, height: 30}} />
-          </TouchableOpacity>
+            <TouchableOpacity
+                style={{ backgroundColor: status === 'online' ? '#40C308' : '#656565', alignItems: 'center', justifyContent: 'center', width: 150, height: 50, borderRadius: 50 }}
+                onPress={() => {
+                    status === 'online' ? setStatus('offline') : setStatus('online')
+                }}
+            >
+                <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold' }}>{status === 'online' ? 'Online' : 'Offline'}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+                <Image source={require('../../Media/settings.png')} style={{ alignSelf: 'center', width: 30, height: 30 }} />
+            </TouchableOpacity>
         </View>
 
-        {/* Ride Prices Area */}
-        <View style={{backgroundColor: 'white', position: 'absolute', bottom: 0, width: '100%', height: 300, borderRadius: 20, padding: 20}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TouchableOpacity style={styles.rides}>
-              <Image source={require('../../Media/car.png')} style={{width: 60, height: 60}} />
-              <Text style={{color: 'black'}}>Cab AC</Text>
-            </TouchableOpacity>
+      <View>
+        {status === 'online' ? <Online /> : <Offline />}
+      </View>
 
-            <TouchableOpacity style={styles.rides}>
-              <Image source={require('../../Media/car.png')} style={{width: 60, height: 60}} />
-              <Text style={{color: 'black'}}>Cab Go</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.rides}>
-              <Image source={require('../../Media/car.png')} style={{width: 60, height: 60}} />
-              <Text style={{color: 'black'}}>Cab Mini</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={{marginVertical: 25}}>
-            <TextInput
-              placeholder='Pickup Location'
-              placeholderTextColor='grey'
-              style={{backgroundColor: '#E5E5E5', paddingHorizontal: 20, marginVertical: 5}}
-            />
-            <TextInput
-              placeholder='Destination'
-              placeholderTextColor='grey'
-              style={{backgroundColor: '#E5E5E5', paddingHorizontal: 20, marginVertical: 5}}
-            />
-          </View>
-        </View>
-        
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  rides: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10,
-    width: 100,
-    borderWidth: 2,
-    borderRadius: 20
-  }
+  
 })
 
 export default DriverHome

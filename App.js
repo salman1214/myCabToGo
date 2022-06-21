@@ -2,13 +2,16 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import StackNavigation from './components/navigation/StackNavigation';
+import CabState from './components/context/cab/CabState';
 
-const App = () => {
+const App = ({ navigation }) => {
 
   return (
-    <NavigationContainer>
-      <StackNavigation />
-    </NavigationContainer>
+    <CabState>
+      <NavigationContainer>
+        <StackNavigation />
+      </NavigationContainer>
+    </CabState>
   );
 };
 

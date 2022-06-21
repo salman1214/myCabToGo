@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {
     View,
     Text,
@@ -8,9 +8,14 @@ import {
     ScrollView,
     TouchableOpacity
 } from 'react-native'
+import CabContext from '../../context/cab/CabContext'
 import PagesHeader from '../PagesHeader'
 
+
 const DriverSignup = ({ navigation }) => {
+
+    const cab = useContext(CabContext)
+
   return (
     <View>
         <PagesHeader navigation={navigation} title='Driver Account' />
@@ -41,7 +46,10 @@ const DriverSignup = ({ navigation }) => {
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => navigation.navigate('Drawer')}
+                onPress={() => {
+                    navigation.navigate('Drawer')
+                    cab.setDriverMode(true)
+                }}
             >
                 <Text style={{fontSize: 16, fontWeight: '500'}}>Continue</Text>
             </TouchableOpacity>

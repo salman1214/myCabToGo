@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {
     View,
     Text,
     StyleSheet
 } from 'react-native'
+import CabContext from './context/cab/CabContext'
 
 
 const SplashScreen = ({ navigation }) => {
 
+    const cab = useContext(CabContext)
+
     setTimeout(() => {
-        navigation.replace('OnBoardingScreen')
-        // if(!driverMode){
-        //     navigation.replace('OnBoardingScreen')
-        // }
-        // else {
-        //     navigation.replace('DriverHome', {driverMode})
-        // }
+        // navigation.replace('OnBoardingScreen')
+        if(!cab.driverMode){
+            navigation.replace('OnBoardingScreen')
+        }
+        else {
+            navigation.replace('DriverHome')
+        }
     }, 700)
 
     return (

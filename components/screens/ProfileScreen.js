@@ -15,7 +15,7 @@ const ProfileScreen = ({ navigation }) => {
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Image style={styles.headerIcon} source={require('../../Media/close.png')} />
                     </TouchableOpacity>
-                    <Text style={styles.headerText}>Salman Naqvi</Text>
+                    <Text style={styles.headerText}>Ali Raza</Text>
                     <View style={styles.rating}>
                         <Image style={{ width: 13, height: 13, marginRight: 5 }} source={require('../../Media/star.png')} />
                         <Text style={{ color: 'black', fontSize: 12 }}>5.0</Text>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     View,
     Text,
@@ -9,9 +9,13 @@ import {
     DrawerContentScrollView,
     DrawerItemList
 } from '@react-navigation/drawer';
+import CabContext from '../../context/cab/CabContext';
 
 
 const CustomDrawer = (props) => {
+
+    const cab = useContext(CabContext)
+
     return (
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView>
@@ -36,7 +40,12 @@ const CustomDrawer = (props) => {
             </DrawerContentScrollView>
 
             <View style={{ position: 'absolute', bottom: 0, width: '100%', alignItems: 'center', paddingVertical: 30 }}>
-                <TouchableOpacity style={{ width: '95%', alignItems: 'center', justifyContent: 'center', height: 60, borderWidth: 2, margin: 10, borderRadius: 50 }}>
+                <TouchableOpacity
+                    onPress={() => {
+                        cab.setDriverMode(false)
+                    }}
+                    style={{ width: '95%', alignItems: 'center', justifyContent: 'center', height: 60, borderWidth: 2, margin: 10, borderRadius: 50 }}
+                >
                     <Text style={{ color: 'black', fontWeight: '500', fontSize: 20 }}>Passenger Mode</Text>
                 </TouchableOpacity>
                 <View style={{ flexDirection: 'row' }}>
